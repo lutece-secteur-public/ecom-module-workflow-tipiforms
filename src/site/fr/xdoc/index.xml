@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Module workflow TIPI Forms</title>
+    </properties>
+    <body>
+        <section name="Module workflow TIPI Forms">
+            <subsection name="Introduction">
+                <p>Ce module permet de fournir les informations nécessaires à une transaction TIPI à partir d'un formulaire.</p>
+                <p>Pour cela, il contient une tâche de workflow permettant de choisir les questions du formulaire contenant les valeurs nécessaires. 
+                </p>
+            </subsection>
+            <subsection name="Utilisation">
+                <p>Il faut configurer la tâche de workflow :
+                <ul>
+                    <li>Premièrement, il faut choisir le formulaire sur lequel le workflow est exécuté, puis appuyer sur le bouton à droite du champ. Cela permet de mettre à jour les champs des questions avec les questions du formulaire choisi.</li>
+                    <p><strong>Note :</strong> Si vous changez le formulaire, il ne faut pas oublier de cliquer sur ce bouton pour mettre à jour les questions.</p>
+                    <li>Deuxièmement, il faut choisir les questions du formulaire qui contiennnent la référence de la dette, le montant et l'adresse email de l'usager.</li>
+                </ul>
+                La configuration peut alors être sauvegardée.
+                </p>
+            </subsection>
+        </section>
+    </body>
+</document>
+
