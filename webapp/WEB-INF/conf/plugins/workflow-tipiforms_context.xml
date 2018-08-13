@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+    
+    <bean id="workflow-tipiforms.tipiFormsProviderTask"
+        class="fr.paris.lutece.plugins.workflow.modules.tipiforms.service.task.TipiFormsProviderTask"
+        scope="prototype" />
+
+    <bean id="workflow-tipiforms.tipiFormsProviderTypeTask"
+        class="fr.paris.lutece.plugins.workflowcore.business.task.TaskType"
+        p:key="tipiFormsProviderTypeTask"
+        p:titleI18nKey="module.workflow.tipiforms.task_forms_provider_title"
+        p:beanName="workflow-tipiforms.tipiFormsProviderTask"
+        p:configBeanName="workflow-tipiforms.taskTipiFormsProviderConfig"
+        p:configRequired="true"
+        p:taskForAutomaticAction="true" />
+
+    <bean id="workflow-tipiforms.taskTipiFormsProviderConfig"
+        class="fr.paris.lutece.plugins.workflow.modules.tipiforms.business.task.TaskTipiFormsProviderConfig"
+        scope="prototype" />
+
+    <bean id="workflow-tipiforms.taskTipiFormsProviderConfigDAO"
+        class="fr.paris.lutece.plugins.workflow.modules.tipiforms.business.task.TaskTipiFormsProviderConfigDAO"
+        scope="prototype" />
+
+    <bean id="workflow-tipiforms.taskTipiFormsProviderConfigService"
+        class="fr.paris.lutece.plugins.workflowcore.service.config.TaskConfigService"
+        p:taskConfigDAO-ref="workflow-tipiforms.taskTipiFormsProviderConfigDAO"
+        scope="prototype" />
+
+    <bean id="workflow-tipiforms.tipiFormsProviderTaskComponent"
+        class="fr.paris.lutece.plugins.workflow.modules.tipiforms.web.task.TipiFormsProviderTaskComponent"
+        p:taskType-ref="workflow-tipiforms.tipiFormsProviderTypeTask"
+        p:taskConfigService-ref="workflow-tipiforms.taskTipiFormsProviderConfigService"
+        scope="prototype" />
+
+</beans>

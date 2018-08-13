@@ -1,0 +1,25 @@
+<div class="row">
+  <fieldset>
+    <legend>#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.step.first}</legend>
+    <@formGroup labelFor="idForm" labelKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.form}" helpKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.form.help}" mandatory=true >
+      <@inputGroup>
+        <@select name="idForm" items=list_form default_value=(config.idForm?string)!'' />
+        <@inputGroupItem>
+          <@button type='submit' name="apply" value="changeForm" showTitle=false buttonIcon='check'/>
+        </@inputGroupItem>
+      </@inputGroup>
+    </@formGroup>  
+  </fieldset>
+  <fieldset>
+    <legend>#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.step.second}</legend>
+    <@formGroup labelFor="idRefDetQuestion" labelKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.refdet}" helpKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.refdet.help}" mandatory=true >
+      <@select name="idRefDetQuestion" items=list_question default_value=(config.idRefDetQuestion?string)!'' />
+    </@formGroup>
+    <@formGroup labelFor="idAmountQuestion" labelKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.amount}" helpKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.amount.help}" mandatory=true >
+      <@select name="idAmountQuestion" items=list_question default_value=(config.idAmountQuestion?string)!'' />
+    </@formGroup>
+    <@formGroup labelFor="idEmailQuestion" labelKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.email}" helpKey="#i18n{module.workflow.tipiforms.task_tipiformsprovider_config.question.email.help}" mandatory=true >
+      <@select name="idEmailQuestion" items=list_question default_value=(config.idEmailQuestion?string)!'' />
+    </@formGroup>
+  </fieldset>
+</div>
