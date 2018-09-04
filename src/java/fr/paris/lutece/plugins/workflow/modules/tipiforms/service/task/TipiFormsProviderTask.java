@@ -46,7 +46,6 @@ import fr.paris.lutece.plugins.forms.business.FormQuestionResponseHome;
 import fr.paris.lutece.plugins.forms.business.FormResponse;
 import fr.paris.lutece.plugins.forms.business.FormResponseHome;
 import fr.paris.lutece.plugins.forms.business.Question;
-import fr.paris.lutece.plugins.forms.business.QuestionHome;
 import fr.paris.lutece.plugins.genericattributes.business.Response;
 import fr.paris.lutece.plugins.workflow.modules.tipi.service.ITipiRefDetHistoryService;
 import fr.paris.lutece.plugins.workflow.modules.tipi.service.ITipiService;
@@ -161,7 +160,7 @@ public class TipiFormsProviderTask extends AbstractTipiProviderTask
 
         for ( FormQuestionResponse formQuestionResponse : FormQuestionResponseHome.getFormQuestionResponseListByFormResponse( formResponse.getId( ) ) )
         {
-            Question question = QuestionHome.findByPrimaryKey( formQuestionResponse.getIdQuestion( ) );
+            Question question = formQuestionResponse.getQuestion( );
 
             if ( question.getId( ) == nIdQuestion )
             {
