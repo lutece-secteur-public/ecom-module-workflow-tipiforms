@@ -58,5 +58,12 @@
         <componentName>workflow-tipiforms</componentName>
         <jiraProjectName>WFTIPIFORM</jiraProjectName>
         <jiraComponentId>14551</jiraComponentId>
-    </properties>
+	</properties>
+	
+    <scm>
+        <connection>scm:git:https://github.com/lutece-secteur-public/lutece-ecom-module-workflow-tipiforms.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-secteur-public/lutece-ecom-module-workflow-tipiforms.git</developerConnection>
+        <url>https://github.com/lutece-secteur-public/lutece-ecom-module-workflow-tipiforms.git</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>
