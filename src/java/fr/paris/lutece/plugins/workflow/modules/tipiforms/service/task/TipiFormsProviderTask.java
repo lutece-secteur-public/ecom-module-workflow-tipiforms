@@ -47,6 +47,7 @@ import fr.paris.lutece.plugins.forms.business.FormResponse;
 import fr.paris.lutece.plugins.forms.business.FormResponseHome;
 import fr.paris.lutece.plugins.forms.business.Question;
 import fr.paris.lutece.plugins.genericattributes.business.Response;
+import fr.paris.lutece.plugins.genericattributes.service.entrytype.EntryTypeServiceManager;
 import fr.paris.lutece.plugins.workflow.modules.tipi.service.ITipiRefDetHistoryService;
 import fr.paris.lutece.plugins.workflow.modules.tipi.service.ITipiService;
 import fr.paris.lutece.plugins.workflow.modules.tipi.service.task.AbstractTipiProviderTask;
@@ -171,7 +172,8 @@ public class TipiFormsProviderTask extends AbstractTipiProviderTask
                     throw new AppException( "The question contains several responses !" );
                 }
 
-                strValue = listResponse.get( 0 ).getToStringValueResponse( );
+     
+               strValue= EntryTypeServiceManager.getEntryTypeService( question.getEntry( ) ).getResponseValueForExport( question.getEntry( ), null, listResponse.get( 0 ), Locale.FRENCH );
                 bFound = true;
             }
         }
